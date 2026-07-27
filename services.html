@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nos services — Cabinet ERETZ LEADER</title>
+<meta name="description" content="Les sept services du Cabinet ERETZ LEADER : formation en leadership patriotique, structuration stratégique, accompagnement des entreprises, communication, assistance juridique, consulting, innovation et transformation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0b1f3a; --navy-2:#142b4f; --navy-3:#0a1830;
+    --red:#c22530; --red-2:#9e1c26;
+    --cream:#f4f1e8; --paper:#ffffff;
+    --ink:#141b26; --ink-soft:#4c5566; --gold:#ab8a45;
+    --line: rgba(11,31,58,0.14); --line-strong: rgba(11,31,58,0.35);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{ margin:0; background:var(--cream); color:var(--ink); font-family:'Inter', sans-serif; -webkit-font-smoothing:antialiased; }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  h1,h2,h3{ font-family:'Big Shoulders Display', sans-serif; text-transform:uppercase; line-height:0.95; margin:0; letter-spacing:0.01em; }
+  .mono{ font-family:'Space Mono', monospace; letter-spacing:0.14em; text-transform:uppercase; }
+  .eyebrow{
+    font-family:'Space Mono', monospace; font-size:0.72rem; letter-spacing:0.22em; text-transform:uppercase;
+    color:var(--red); display:flex; align-items:center; gap:10px; margin-bottom:16px; font-weight:700;
+  }
+  .eyebrow::before{ content:""; width:22px; height:2px; background:var(--red); display:inline-block; }
+  .wrap{ max-width:1180px; margin:0 auto; padding:0 32px; }
+
+  header{ position:sticky; top:0; z-index:50; background:rgba(244,241,232,0.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); }
+  .nav-inner{ max-width:1180px; margin:0 auto; padding:14px 32px; display:flex; align-items:center; justify-content:space-between; }
+  .brand{ display:flex; align-items:center; gap:12px; text-decoration:none; }
+  .brand-mark{ width:38px;height:38px;border-radius:50%; border:2px solid var(--navy); display:flex;align-items:center;justify-content:center; background:var(--navy); color:var(--cream); font-family:'Big Shoulders Display'; font-weight:800; font-size:1rem; }
+  .brand-name{ font-family:'Big Shoulders Display'; font-weight:800; font-size:1.15rem; letter-spacing:0.02em; color:var(--navy); }
+  .brand-name span{ color:var(--red); }
+  nav ul{ list-style:none; display:flex; gap:30px; margin:0; padding:0; }
+  nav a{ text-decoration:none; font-size:0.82rem; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; color:var(--navy); position:relative; padding-bottom:4px; }
+  nav a.active{ color:var(--red); }
+  nav a::after{ content:""; position:absolute; left:0; bottom:0; width:0; height:2px; background:var(--red); transition:width 0.25s ease; }
+  nav a:hover::after{ width:100%; }
+  .nav-cta{ display:inline-block; background:var(--red); color:#fff !important; padding:10px 18px; font-size:0.78rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; text-decoration:none; border:1px solid var(--red); }
+  .nav-cta:hover{ background:var(--red-2); }
+
+  .btn{ display:inline-flex; align-items:center; gap:8px; padding:14px 26px; font-size:0.8rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; text-decoration:none; border:1px solid transparent; cursor:pointer; }
+  .btn-primary{ background:var(--red); color:#fff; border-color:var(--red); }
+  .btn-primary:hover{ background:var(--red-2); border-color:var(--red-2); }
+  .btn-outline{ background:transparent; color:var(--navy); border-color:var(--line-strong); }
+  .btn-outline:hover{ border-color:var(--navy); }
+
+  .intro{ position:relative; background:var(--navy); color:var(--cream); padding:64px 0 56px; overflow:hidden; }
+  .intro-grid-bg{
+    position:absolute; inset:0;
+    background-image: linear-gradient(rgba(244,241,232,0.055) 1px, transparent 1px), linear-gradient(90deg, rgba(244,241,232,0.055) 1px, transparent 1px);
+    background-size:56px 56px;
+    mask-image:linear-gradient(to bottom, black, transparent 92%);
+    pointer-events:none;
+  }
+  .intro-inner{ position:relative; z-index:2; }
+  .breadcrumb{ font-family:'Space Mono'; font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(244,241,232,0.55); margin-bottom:22px; }
+  .breadcrumb a{ color:rgba(244,241,232,0.85); text-decoration:none; }
+  .breadcrumb a:hover{ text-decoration:underline; }
+  .intro h1{ font-size:clamp(2.1rem, 4.6vw, 3.4rem); font-weight:900; color:var(--cream); }
+  .intro h1 .accent{ color:var(--red); }
+  .intro-sub{ margin-top:14px; font-family:'Space Mono'; font-size:0.82rem; letter-spacing:0.06em; color:rgba(244,241,232,0.7); max-width:600px; line-height:1.7; text-transform:none; }
+
+  .services{ background:var(--paper); padding:80px 0; }
+  .svc-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:1px; background:var(--line-strong); border:1px solid var(--line-strong); }
+  .svc-card{ background:var(--paper); padding:36px 30px; display:flex; flex-direction:column; min-height:300px; transition:background 0.25s ease; }
+  .svc-card:hover{ background:#fbfaf6; }
+  .svc-icon{ width:50px;height:50px; border-radius:50%; background:var(--navy); display:flex;align-items:center;justify-content:center; margin-bottom:22px; flex-shrink:0; }
+  .svc-card:hover .svc-icon{ background:var(--red); }
+  .svc-icon svg{ width:23px; height:23px; stroke:var(--cream); }
+  .svc-card h3{ font-size:1.3rem; color:var(--navy); font-weight:800; margin-bottom:12px; }
+  .svc-card p{ font-size:0.92rem; line-height:1.65; color:var(--ink-soft); margin:0; }
+  .svc-tags{ margin-top:auto; padding-top:18px; font-family:'Space Mono'; font-size:0.65rem; letter-spacing:0.05em; color:var(--gold); text-transform:uppercase; }
+
+  .process{ background:var(--cream); padding:76px 0; border-top:1px solid var(--line); }
+  .process-grid{ display:flex; flex-wrap:wrap; gap:0; margin-top:44px; border:1px solid var(--line-strong); background:var(--line-strong); }
+  .p-step{ flex:1 1 200px; background:var(--paper); padding:28px 24px; }
+  .p-step .idx{ font-family:'Space Mono'; color:var(--red); font-weight:700; font-size:0.72rem; }
+  .p-step h3{ font-size:1.1rem; color:var(--navy); margin-top:10px; }
+  .p-step p{ font-size:0.85rem; color:var(--ink-soft); margin-top:8px; line-height:1.55; }
+
+  .cta-band{ background:var(--red); color:#fff; padding:64px 0; text-align:center; position:relative; overflow:hidden; }
+  .cta-band::before{ content:""; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px); background-size:100% 44px; pointer-events:none; }
+  .cta-band .wrap{ position:relative; z-index:1; }
+  .cta-band h2{ font-size:clamp(1.6rem,3vw,2.2rem); }
+  .cta-band p{ margin:14px 0 28px; font-size:1rem; color:rgba(255,255,255,0.9); }
+  .cta-row{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+  .cta-band .btn-outline{ color:#fff; border-color:rgba(255,255,255,0.5); }
+  .cta-band .btn-outline:hover{ border-color:#fff; }
+  .cta-band .btn-primary{ background:var(--navy); border-color:var(--navy); }
+  .cta-band .btn-primary:hover{ background:var(--navy-2); border-color:var(--navy-2); }
+
+  footer{ background:var(--navy-3); color:var(--cream); padding:44px 0 24px; }
+  .foot-inner{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px; padding-bottom:24px; border-bottom:1px solid rgba(244,241,232,0.14); }
+  .foot-inner a{ color:rgba(244,241,232,0.85); text-decoration:none; font-size:0.9rem; }
+  .foot-inner a:hover{ color:#fff; }
+  .foot-links{ display:flex; gap:26px; flex-wrap:wrap; }
+  .foot-bottom{ padding-top:20px; font-family:'Space Mono'; font-size:0.66rem; letter-spacing:0.06em; color:rgba(244,241,232,0.4); text-transform:uppercase; }
+
+  .reveal{ opacity:0; transform:translateY(18px); transition:opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+  @media (prefers-reduced-motion: reduce){ .reveal{ opacity:1; transform:none; transition:none; } html{ scroll-behavior:auto; } }
+  a:focus-visible, button:focus-visible{ outline:2px solid var(--red); outline-offset:3px; }
+
+  @media (max-width: 900px){
+    nav ul{ display:none; }
+    .svc-grid{ grid-template-columns:repeat(2,1fr); }
+  }
+  @media (max-width: 560px){
+    .wrap{ padding:0 20px; }
+    .svc-grid{ grid-template-columns:1fr; }
+    .nav-cta{ padding:9px 13px; font-size:0.7rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">EL</span>
+      <span class="brand-name">ERETZ<span> LEADER</span></span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="apropos.html">Qui sommes-nous</a></li>
+        <li><a href="fondateur.html">Fondateur</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="formations.html">Formations</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="contact.html" class="nav-cta">Nous contacter</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="intro">
+    <div class="intro-grid-bg" aria-hidden="true"></div>
+    <div class="wrap intro-inner">
+      <div class="breadcrumb"><a href="index.html">Accueil</a> &nbsp;/&nbsp; Services</div>
+      <h1>Nos <span class="accent">services</span></h1>
+      <p class="intro-sub">Sept leviers, une seule exigence : la durée. Chaque service répond à un besoin précis de structuration — pour les personnes, les entreprises et les institutions.</p>
+    </div>
+  </section>
+
+  <section class="services">
+    <div class="wrap">
+      <div class="svc-grid">
+        <div class="svc-card reveal">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M12 22v-6M4 6l4.5 3M19.5 6L15 9M4 18l4.5-3M19.5 18L15 15"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <h3>Formation en leadership patriotique</h3>
+          <p>Former des leaders compétents, responsables et engagés pour le développement national.</p>
+          <div class="svc-tags">Compétence — Engagement — Nation</div>
+        </div>
+
+        <div class="svc-card reveal">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V9l7-6 7 6v12"/><path d="M9 21v-6h6v6"/></svg></div>
+          <h3>Structuration stratégique</h3>
+          <p>Vision, organisation, systèmes et modèles économiques, gouvernance.</p>
+          <div class="svc-tags">Vision — Organisation — Gouvernance</div>
+        </div>
+
+        <div class="svc-card reveal">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><path d="M2 21v-1a6 6 0 0 1 6-6h2a6 6 0 0 1 6 6v1"/><circle cx="18" cy="8" r="2.2"/><path d="M16.5 14.2c1.3-.3 3.3-.1 4.5 1v1"/></svg></div>
+          <h3>Accompagnement des entreprises &amp; organisations</h3>
+          <p>Productivité, ressources humaines, performance, pérennisation.</p>
+          <div class="svc-tags">RH — Productivité — Performance</div>
+        </div>
+
+        <div class="svc-card reveal">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-7-7 18-3-8-8-3z"/></svg></div>
+          <h3>Communication stratégique &amp; branding</h3>
+          <p>Image institutionnelle, message d'impact, positionnement.</p>
+          <div class="svc-tags">Image — Message — Positionnement</div>
+        </div>
+
+        <div class="svc-card reveal">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 7l-3 6a3 3 0 0 0 6 0l-3-6zM19 7l-3 6a3 3 0 0 0 6 0l-3-6zM5 7h14M8 21h8"/></svg></div>
+          <h3>Assistance &amp; orientation juridique</h3>
+          <p>Sécurisation et structuration légale des activités et projets.</p>
+          <div class="svc-tags">Sécurisation — Conformité — Cadre légal</div>
+        </div>
+
+        <div class="svc-card reveal">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div>
+          <h3>Consulting</h3>
+          <p>Études, conseils stratégiques et solutions sur mesure pour des résultats durables.</p>
+          <div class="svc-tags">Étude — Conseil — Solutions</div>
+        </div>
+
+        <div class="svc-card reveal">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l1.6 4.6L18 8l-4.4 1.4L12 14l-1.6-4.6L6 8l4.4-1.4L12 2z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8L19 15z"/></svg></div>
+          <h3>Innovation &amp; transformation</h3>
+          <p>Accompagner l'adoption de nouvelles pratiques et technologies pour moderniser durablement les organisations.</p>
+          <div class="svc-tags">Modernisation — Créativité — Adaptation</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="process">
+    <div class="wrap">
+      <div class="reveal" style="max-width:640px;">
+        <div class="eyebrow">Notre approche</div>
+        <h2 style="font-size:2rem;color:var(--navy);">Comment nous intervenons</h2>
+      </div>
+      <div class="process-grid reveal">
+        <div class="p-step">
+          <span class="idx">A</span>
+          <h3>Diagnostic</h3>
+          <p>Comprendre le potentiel réel — personne, entreprise ou institution.</p>
+        </div>
+        <div class="p-step">
+          <span class="idx">B</span>
+          <h3>Structuration</h3>
+          <p>Vision, organisation, systèmes et gouvernance.</p>
+        </div>
+        <div class="p-step">
+          <span class="idx">C</span>
+          <h3>Formation</h3>
+          <p>Des leaders compétents, responsables et engagés.</p>
+        </div>
+        <div class="p-step">
+          <span class="idx">D</span>
+          <h3>Pérennisation</h3>
+          <p>Des résultats qui durent, utiles à la Nation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap reveal">
+      <h2>Un besoin précis à structurer ?</h2>
+      <p>Parlons de votre projet et du service le plus adapté.</p>
+      <div class="cta-row">
+        <a href="contact.html" class="btn btn-primary">Nous contacter</a>
+        <a href="apropos.html" class="btn btn-outline">Qui sommes-nous</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-inner">
+      <a href="index.html" class="brand"><span class="brand-mark">EL</span></a>
+      <div class="foot-links">
+        <a href="index.html">Accueil</a>
+        <a href="apropos.html">Qui sommes-nous</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="foot-bottom">© 2026 Cabinet Eretz Leader — Tous droits réservés</div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.15});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>

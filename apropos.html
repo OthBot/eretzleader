@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qui sommes-nous — Cabinet ERETZ LEADER</title>
+<meta name="description" content="ERETZ LEADER, cabinet de structuration stratégique et de formation. Découvrez notre méthode et notre conviction.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0b1f3a; --navy-2:#142b4f; --navy-3:#0a1830;
+    --red:#c22530; --red-2:#9e1c26;
+    --cream:#f4f1e8; --paper:#ffffff;
+    --ink:#141b26; --ink-soft:#4c5566; --gold:#ab8a45;
+    --line: rgba(11,31,58,0.14); --line-strong: rgba(11,31,58,0.35);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{ margin:0; background:var(--cream); color:var(--ink); font-family:'Inter', sans-serif; -webkit-font-smoothing:antialiased; }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  h1,h2,h3{ font-family:'Big Shoulders Display', sans-serif; text-transform:uppercase; line-height:0.95; margin:0; letter-spacing:0.01em; }
+  .mono{ font-family:'Space Mono', monospace; letter-spacing:0.14em; text-transform:uppercase; }
+  .eyebrow{
+    font-family:'Space Mono', monospace; font-size:0.72rem; letter-spacing:0.22em; text-transform:uppercase;
+    color:var(--red); display:flex; align-items:center; gap:10px; margin-bottom:16px; font-weight:700;
+  }
+  .eyebrow::before{ content:""; width:22px; height:2px; background:var(--red); display:inline-block; }
+  .wrap{ max-width:1180px; margin:0 auto; padding:0 32px; }
+
+  .bp{ position:relative; }
+  .bp::before, .bp::after{ content:""; position:absolute; width:14px; height:14px; border:2px solid var(--line-strong); pointer-events:none; }
+  .bp::before{ top:-1px; left:-1px; border-right:none; border-bottom:none; }
+  .bp::after{ bottom:-1px; right:-1px; border-left:none; border-top:none; }
+
+  header{ position:sticky; top:0; z-index:50; background:rgba(244,241,232,0.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); }
+  .nav-inner{ max-width:1180px; margin:0 auto; padding:14px 32px; display:flex; align-items:center; justify-content:space-between; }
+  .brand{ display:flex; align-items:center; gap:12px; text-decoration:none; }
+  .brand-mark{ width:38px;height:38px;border-radius:50%; border:2px solid var(--navy); display:flex;align-items:center;justify-content:center; background:var(--navy); color:var(--cream); font-family:'Big Shoulders Display'; font-weight:800; font-size:1rem; }
+  .brand-name{ font-family:'Big Shoulders Display'; font-weight:800; font-size:1.15rem; letter-spacing:0.02em; color:var(--navy); }
+  .brand-name span{ color:var(--red); }
+  nav ul{ list-style:none; display:flex; gap:30px; margin:0; padding:0; }
+  nav a{ text-decoration:none; font-size:0.82rem; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; color:var(--navy); position:relative; padding-bottom:4px; }
+  nav a.active{ color:var(--red); }
+  nav a::after{ content:""; position:absolute; left:0; bottom:0; width:0; height:2px; background:var(--red); transition:width 0.25s ease; }
+  nav a:hover::after{ width:100%; }
+  .nav-cta{ display:inline-block; background:var(--red); color:#fff !important; padding:10px 18px; font-size:0.78rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; text-decoration:none; border:1px solid var(--red); }
+  .nav-cta:hover{ background:var(--red-2); }
+
+  .btn{ display:inline-flex; align-items:center; gap:8px; padding:14px 26px; font-size:0.8rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; text-decoration:none; border:1px solid transparent; cursor:pointer; }
+  .btn-primary{ background:var(--red); color:#fff; border-color:var(--red); }
+  .btn-primary:hover{ background:var(--red-2); border-color:var(--red-2); }
+  .btn-outline{ background:transparent; color:var(--navy); border-color:var(--line-strong); }
+  .btn-outline:hover{ border-color:var(--navy); }
+
+  .intro{ position:relative; background:var(--navy); color:var(--cream); padding:64px 0 56px; overflow:hidden; }
+  .intro-grid-bg{
+    position:absolute; inset:0;
+    background-image: linear-gradient(rgba(244,241,232,0.055) 1px, transparent 1px), linear-gradient(90deg, rgba(244,241,232,0.055) 1px, transparent 1px);
+    background-size:56px 56px;
+    mask-image:linear-gradient(to bottom, black, transparent 92%);
+    pointer-events:none;
+  }
+  .intro-inner{ position:relative; z-index:2; }
+  .breadcrumb{ font-family:'Space Mono'; font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(244,241,232,0.55); margin-bottom:22px; }
+  .breadcrumb a{ color:rgba(244,241,232,0.85); text-decoration:none; }
+  .breadcrumb a:hover{ text-decoration:underline; }
+  .intro h1{ font-size:clamp(2.1rem, 4.6vw, 3.4rem); font-weight:900; color:var(--cream); }
+  .intro h1 .accent{ color:var(--red); }
+  .intro-sub{ margin-top:14px; font-family:'Space Mono'; font-size:0.82rem; letter-spacing:0.06em; color:rgba(244,241,232,0.7); max-width:600px; line-height:1.7; text-transform:none; }
+
+  .about{ background:var(--paper); padding:80px 0; border-bottom:1px solid var(--line); }
+  .about-inner{ display:grid; grid-template-columns:1fr 0.9fr; gap:60px; align-items:start; }
+  .about-text p{ font-size:1.05rem; line-height:1.75; color:var(--ink-soft); margin:0 0 20px; }
+  .about-text p strong{ color:var(--ink); }
+  .credo{ margin-top:32px; padding:24px 26px; background:var(--cream); border-left:3px solid var(--red); }
+  .credo .l1{ color:var(--ink-soft); font-size:1.05rem; }
+  .credo .l2{ color:var(--red); font-weight:700; font-size:1.05rem; margin-top:4px; }
+
+  .diagram{ padding:34px; border:1px solid var(--line); background:var(--cream); position:relative; }
+  .diagram .mono{ color:var(--navy); font-size:0.68rem; font-weight:700; }
+  .diagram-title{ margin:10px 0 26px; font-size:1.4rem; color:var(--navy); font-weight:800; }
+  .flow{ display:flex; flex-direction:column; }
+  .flow-step{ display:flex; align-items:center; gap:14px; padding:14px 0; border-top:1px dashed var(--line-strong); }
+  .flow-step:first-child{ border-top:none; }
+  .flow-step .idx{ font-family:'Space Mono'; font-size:0.72rem; color:var(--red); font-weight:700; width:26px; }
+  .flow-step .lbl{ font-weight:700; color:var(--navy); font-size:0.95rem; }
+  .flow-step .sub{ display:block; font-weight:400; color:var(--ink-soft); font-size:0.82rem; margin-top:2px;}
+
+  .pillars{ background:var(--cream); padding:76px 0; }
+  .pillars-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line-strong); border:1px solid var(--line-strong); margin-top:44px; }
+  .pillar{ background:var(--paper); padding:28px 24px; }
+  .pillar .n{ font-family:'Space Mono'; font-size:0.66rem; color:var(--red); font-weight:700; }
+  .pillar h3{ font-size:1.05rem; color:var(--navy); font-weight:800; margin-top:10px; }
+  .pillar p{ font-size:0.84rem; color:var(--ink-soft); margin-top:8px; line-height:1.55; }
+
+  .cta-band{ background:var(--paper); padding:64px 0; text-align:center; border-top:1px solid var(--line); }
+  .cta-band h2{ font-size:clamp(1.6rem,3vw,2.2rem); color:var(--navy); }
+  .cta-band p{ color:var(--ink-soft); margin:14px 0 28px; font-size:1rem; }
+  .cta-row{ display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+
+  footer{ background:var(--navy-3); color:var(--cream); padding:44px 0 24px; }
+  .foot-inner{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px; padding-bottom:24px; border-bottom:1px solid rgba(244,241,232,0.14); }
+  .foot-inner a{ color:rgba(244,241,232,0.85); text-decoration:none; font-size:0.9rem; }
+  .foot-inner a:hover{ color:#fff; }
+  .foot-links{ display:flex; gap:26px; flex-wrap:wrap; }
+  .foot-bottom{ padding-top:20px; font-family:'Space Mono'; font-size:0.66rem; letter-spacing:0.06em; color:rgba(244,241,232,0.4); text-transform:uppercase; }
+
+  .reveal{ opacity:0; transform:translateY(18px); transition:opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+  @media (prefers-reduced-motion: reduce){ .reveal{ opacity:1; transform:none; transition:none; } html{ scroll-behavior:auto; } }
+  a:focus-visible, button:focus-visible{ outline:2px solid var(--red); outline-offset:3px; }
+
+  @media (max-width: 900px){
+    nav ul{ display:none; }
+    .about-inner{ grid-template-columns:1fr; }
+    .pillars-grid{ grid-template-columns:repeat(2,1fr); }
+  }
+  @media (max-width: 560px){
+    .wrap{ padding:0 20px; }
+    .pillars-grid{ grid-template-columns:1fr; }
+    .nav-cta{ padding:9px 13px; font-size:0.7rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">EL</span>
+      <span class="brand-name">ERETZ<span> LEADER</span></span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="apropos.html" class="active">Qui sommes-nous</a></li>
+        <li><a href="fondateur.html">Fondateur</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="formations.html">Formations</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="contact.html" class="nav-cta">Nous contacter</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="intro">
+    <div class="intro-grid-bg" aria-hidden="true"></div>
+    <div class="wrap intro-inner">
+      <div class="breadcrumb"><a href="index.html">Accueil</a> &nbsp;/&nbsp; Qui sommes-nous</div>
+      <h1>Un cabinet,<br>une <span class="accent">méthode</span></h1>
+      <p class="intro-sub">Bâtir · Structurer · Pérenniser le potentiel.</p>
+    </div>
+  </section>
+
+  <section class="about">
+    <div class="wrap about-inner">
+      <div class="reveal">
+        <div class="eyebrow">Notre mission</div>
+        <div class="about-text">
+          <p><strong>ERETZ LEADER</strong> est un cabinet de structuration stratégique et de formation. Nous accompagnons les personnes, entreprises, organisations et institutions à transformer leur potentiel en résultats durables et utiles à la Nation.</p>
+          <p>Notre rôle n'est pas de motiver ponctuellement, mais de mettre en place les <strong>systèmes, les modèles et la gouvernance</strong> qui permettent au potentiel de se maintenir dans le temps — au-delà de l'enthousiasme du moment.</p>
+        </div>
+        <div class="credo">
+          <span class="l1">Sans structuration, le potentiel s'éparpille.</span>
+          <span class="l2">Avec la structuration, tout devient durable.</span>
+        </div>
+      </div>
+
+      <div class="diagram reveal">
+        <span class="mono">MÉTHODE</span>
+        <div class="diagram-title">De l'énergie au résultat</div>
+        <div class="flow">
+          <div class="flow-step"><span class="idx">A</span><span class="lbl">Diagnostic<span class="sub">Comprendre le potentiel réel — personne, entreprise ou institution.</span></span></div>
+          <div class="flow-step"><span class="idx">B</span><span class="lbl">Structuration<span class="sub">Vision, organisation, systèmes et gouvernance.</span></span></div>
+          <div class="flow-step"><span class="idx">C</span><span class="lbl">Formation<span class="sub">Des leaders compétents, responsables et engagés.</span></span></div>
+          <div class="flow-step"><span class="idx">D</span><span class="lbl">Pérennisation<span class="sub">Des résultats qui durent, utiles à la Nation.</span></span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pillars">
+    <div class="wrap">
+      <div class="reveal" style="max-width:640px;">
+        <div class="eyebrow">Nos valeurs</div>
+        <h2 style="font-size:2rem;color:var(--navy);">Ce qui guide chaque accompagnement</h2>
+      </div>
+      <div class="pillars-grid reveal">
+        <div class="pillar">
+          <span class="n">01</span>
+          <h3>Responsabilité</h3>
+          <p>Chaque acteur assume pleinement son rôle dans la durée.</p>
+        </div>
+        <div class="pillar">
+          <span class="n">02</span>
+          <h3>Intégrité</h3>
+          <p>La rigueur et l'honnêteté au fondement de toute structuration.</p>
+        </div>
+        <div class="pillar">
+          <span class="n">03</span>
+          <h3>Souveraineté</h3>
+          <p>Des solutions pensées pour et par les réalités africaines.</p>
+        </div>
+        <div class="pillar">
+          <span class="n">04</span>
+          <h3>Service du bien commun</h3>
+          <p>Le potentiel individuel mis au service de la Nation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap reveal">
+      <h2>Envie de structurer votre potentiel ?</h2>
+      <p>Découvrez le fondateur du cabinet ou parlons directement de votre projet.</p>
+      <div class="cta-row">
+        <a href="fondateur.html" class="btn btn-outline">Découvrir le fondateur</a>
+        <a href="contact.html" class="btn btn-primary">Nous contacter</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-inner">
+      <a href="index.html" class="brand"><span class="brand-mark">EL</span></a>
+      <div class="foot-links">
+        <a href="index.html">Accueil</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="foot-bottom">© 2026 Cabinet Eretz Leader — Tous droits réservés</div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.15});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>

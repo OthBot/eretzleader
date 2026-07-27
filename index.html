@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cabinet ERETZ LEADER — Là où le potentiel devient une force structurée</title>
+<meta name="description" content="ERETZ LEADER, cabinet de structuration stratégique et de formation. Formation en leadership patriotique, structuration stratégique, accompagnement des entreprises, communication, assistance juridique, consulting.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0b1f3a;
+    --navy-2:#142b4f;
+    --navy-3:#0a1830;
+    --red:#c22530;
+    --red-2:#9e1c26;
+    --cream:#f4f1e8;
+    --paper:#ffffff;
+    --ink:#141b26;
+    --ink-soft:#4c5566;
+    --gold:#ab8a45;
+    --line: rgba(11,31,58,0.14);
+    --line-strong: rgba(11,31,58,0.35);
+    --radius: 2px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+
+  h1,h2,h3{
+    font-family:'Big Shoulders Display', sans-serif;
+    text-transform:uppercase;
+    line-height:0.95;
+    margin:0;
+    letter-spacing:0.01em;
+  }
+
+  .mono{
+    font-family:'Space Mono', monospace;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+  }
+
+  .eyebrow{
+    font-family:'Space Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--red);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:16px;
+    font-weight:700;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px;
+    height:2px;
+    background:var(--red);
+    display:inline-block;
+  }
+
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  /* ---------- corner brackets / blueprint marks ---------- */
+  .bp{ position:relative; }
+  .bp::before, .bp::after{
+    content:"";
+    position:absolute;
+    width:14px;
+    height:14px;
+    border:2px solid var(--line-strong);
+    pointer-events:none;
+  }
+  .bp::before{ top:-1px; left:-1px; border-right:none; border-bottom:none; }
+  .bp::after{ bottom:-1px; right:-1px; border-left:none; border-top:none; }
+  .bp.on-dark::before, .bp.on-dark::after{ border-color:rgba(244,241,232,0.35); }
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(244,241,232,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:1180px;
+    margin:0 auto;
+    padding:14px 32px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    text-decoration:none;
+  }
+  .brand-mark{
+    width:38px;height:38px;border-radius:50%;
+    border:2px solid var(--navy);
+    display:flex;align-items:center;justify-content:center;
+    background:var(--navy);
+    color:var(--cream);
+    font-family:'Big Shoulders Display';
+    font-weight:800;
+    font-size:1rem;
+  }
+  .brand-name{
+    font-family:'Big Shoulders Display';
+    font-weight:800;
+    font-size:1.15rem;
+    letter-spacing:0.02em;
+    color:var(--navy);
+  }
+  .brand-name span{color:var(--red);}
+  nav ul{
+    list-style:none;
+    display:flex;
+    gap:30px;
+    margin:0;padding:0;
+  }
+  nav a{
+    text-decoration:none;
+    font-size:0.82rem;
+    font-weight:600;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    color:var(--navy);
+    position:relative;
+    padding-bottom:4px;
+  }
+  nav a::after{
+    content:"";
+    position:absolute;left:0;bottom:0;
+    width:0;height:2px;background:var(--red);
+    transition:width 0.25s ease;
+  }
+  nav a:hover::after{width:100%;}
+  .nav-cta{
+    display:inline-block;
+    background:var(--red);
+    color:#fff !important;
+    padding:10px 18px;
+    font-size:0.78rem;
+    font-weight:700;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    text-decoration:none;
+    border:1px solid var(--red);
+  }
+  .nav-cta:hover{ background:var(--red-2); }
+  .nav-toggle{ display:none; }
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    background:var(--navy);
+    color:var(--cream);
+    overflow:hidden;
+    padding:96px 0 60px;
+  }
+  .hero-grid-bg{
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(244,241,232,0.055) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(244,241,232,0.055) 1px, transparent 1px);
+    background-size:56px 56px;
+    mask-image:linear-gradient(to bottom, black, transparent 92%);
+    pointer-events:none;
+  }
+  .hero-inner{
+    position:relative;
+    z-index:2;
+    display:grid;
+    grid-template-columns:1.15fr 0.85fr;
+    gap:48px;
+    align-items:center;
+  }
+  .hero-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    border:1px solid rgba(244,241,232,0.3);
+    padding:7px 14px;
+    font-size:0.68rem;
+    margin-bottom:26px;
+    color:rgba(244,241,232,0.85);
+  }
+  .hero-badge .dot{width:6px;height:6px;background:var(--red);border-radius:50%;}
+  .hero h1{
+    font-size:clamp(2.6rem, 6vw, 4.6rem);
+    font-weight:900;
+    color:var(--cream);
+  }
+  .hero h1 .accent{ color:var(--red); }
+  .hero-sub{
+    margin-top:18px;
+    font-family:'Space Mono', monospace;
+    font-size:0.86rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:rgba(244,241,232,0.75);
+  }
+  .hero-sub b{color:var(--cream);}
+
+  .thesis{
+    margin-top:38px;
+    padding-top:28px;
+    border-top:1px dashed rgba(244,241,232,0.28);
+  }
+  .thesis .no{
+    font-size:clamp(1.3rem,2.6vw,1.7rem);
+    color:rgba(244,241,232,0.45);
+    text-decoration:line-through;
+    text-decoration-color:var(--red);
+    text-decoration-thickness:2px;
+    font-family:'Big Shoulders Display';
+    font-weight:700;
+    text-transform:uppercase;
+    display:block;
+  }
+  .thesis .yes{
+    font-size:clamp(1.6rem,3.4vw,2.3rem);
+    color:var(--cream);
+    font-family:'Big Shoulders Display';
+    font-weight:800;
+    text-transform:uppercase;
+    display:block;
+    margin-top:4px;
+  }
+  .thesis .yes span{ color:var(--red); }
+
+  .hero-ctas{
+    margin-top:38px;
+    display:flex;
+    gap:14px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:14px 26px;
+    font-size:0.8rem;
+    font-weight:700;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    text-decoration:none;
+    border:1px solid transparent;
+    cursor:pointer;
+  }
+  .btn-primary{ background:var(--red); color:#fff; border-color:var(--red); }
+  .btn-primary:hover{ background:var(--red-2); border-color:var(--red-2); }
+  .btn-ghost{ background:transparent; color:var(--cream); border-color:rgba(244,241,232,0.4); }
+  .btn-ghost:hover{ border-color:var(--cream); }
+
+  .hero-emblem{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .emblem-ring{
+    width:min(360px, 82vw);
+    aspect-ratio:1;
+    border-radius:50%;
+    border:1px solid rgba(244,241,232,0.25);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+  }
+  .emblem-ring::before{
+    content:"";
+    position:absolute; inset:22px;
+    border-radius:50%;
+    border:1px dashed rgba(244,241,232,0.25);
+  }
+  .emblem-core{
+    width:60%;
+    aspect-ratio:1;
+    border-radius:50%;
+    background:linear-gradient(160deg, var(--navy-2), var(--navy-3));
+    border:2px solid var(--red);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:14px;
+  }
+  .emblem-core svg{ width:44px; height:44px; margin-bottom:10px; }
+  .emblem-core .t1{ font-family:'Big Shoulders Display'; font-weight:800; font-size:0.95rem; letter-spacing:0.08em; }
+  .emblem-core .t2{ font-family:'Space Mono'; font-size:0.55rem; letter-spacing:0.16em; color:var(--red); margin-top:6px; }
+  .emblem-tick{
+    position:absolute;
+    font-family:'Space Mono';
+    font-size:0.6rem;
+    color:rgba(244,241,232,0.55);
+    letter-spacing:0.12em;
+  }
+  .et-n{ top:-4px; left:50%; transform:translateX(-50%); }
+  .et-s{ bottom:-4px; left:50%; transform:translateX(-50%); }
+  .et-e{ right:-46px; top:50%; transform:translateY(-50%); }
+  .et-w{ left:-46px; top:50%; transform:translateY(-50%); }
+
+  /* ---------- sections generic ---------- */
+  section{ padding:90px 0; position:relative; }
+  .section-head{
+    max-width:640px;
+    margin-bottom:52px;
+  }
+  .section-head h2{
+    font-size:clamp(2rem,4vw,2.8rem);
+    color:var(--navy);
+    font-weight:800;
+  }
+  .section-head p{
+    margin-top:16px;
+    font-size:1.02rem;
+    color:var(--ink-soft);
+    line-height:1.65;
+  }
+
+  /* ---------- qui sommes-nous ---------- */
+  .about{
+    background:var(--paper);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .about-inner{
+    display:grid;
+    grid-template-columns:1fr 0.9fr;
+    gap:60px;
+    align-items:start;
+  }
+  .about-text p{
+    font-size:1.05rem;
+    line-height:1.75;
+    color:var(--ink-soft);
+    margin:0 0 20px;
+  }
+  .about-text p strong{ color:var(--ink); }
+  .credo{
+    margin-top:32px;
+    padding:24px 26px;
+    background:var(--cream);
+    border-left:3px solid var(--red);
+  }
+  .credo .l1{ color:var(--ink-soft); font-size:1.05rem; }
+  .credo .l2{ color:var(--red); font-weight:700; font-size:1.05rem; margin-top:4px; }
+
+  .diagram{
+    padding:34px;
+    border:1px solid var(--line);
+    background:var(--cream);
+    position:relative;
+  }
+  .diagram .mono{ color:var(--navy); font-size:0.68rem; font-weight:700; }
+  .diagram-title{ margin:10px 0 26px; font-size:1.4rem; color:var(--navy); font-weight:800; }
+  .flow{ display:flex; flex-direction:column; }
+  .flow-step{
+    display:flex; align-items:center; gap:14px;
+    padding:14px 0;
+    border-top:1px dashed var(--line-strong);
+  }
+  .flow-step:first-child{ border-top:none; }
+  .flow-step .idx{
+    font-family:'Space Mono'; font-size:0.72rem; color:var(--red); font-weight:700;
+    width:26px;
+  }
+  .flow-step .lbl{ font-weight:700; color:var(--navy); font-size:0.95rem; }
+  .flow-step .sub{ display:block; font-weight:400; color:var(--ink-soft); font-size:0.82rem; margin-top:2px;}
+
+  /* ---------- founder ---------- */
+  .founder{ background:var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .founder-inner{
+    display:grid;
+    grid-template-columns:0.78fr 1.22fr;
+    gap:56px;
+    align-items:start;
+  }
+  .portrait-frame{
+    position:relative;
+    aspect-ratio:3/4;
+    background:linear-gradient(165deg, var(--navy-2), var(--navy-3));
+    border:1px solid var(--line-strong);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    color:var(--cream);
+    padding:24px;
+    text-align:center;
+  }
+  .portrait-initials{
+    width:104px;height:104px;
+    border-radius:50%;
+    border:2px solid var(--red);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Big Shoulders Display';
+    font-weight:900;
+    font-size:2.6rem;
+    color:var(--cream);
+  }
+  .portrait-name{
+    margin-top:22px;
+    font-family:'Big Shoulders Display';
+    font-weight:800;
+    font-size:1.35rem;
+    text-transform:uppercase;
+    line-height:1.15;
+  }
+  .portrait-role{
+    margin-top:10px;
+    font-family:'Space Mono';
+    font-size:0.64rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--red);
+    line-height:1.6;
+  }
+  .founding-tag{
+    position:absolute;
+    bottom:-1px; left:-1px;
+    background:var(--red);
+    color:#fff;
+    font-family:'Space Mono';
+    font-size:0.6rem;
+    letter-spacing:0.08em;
+    padding:9px 13px;
+    text-transform:uppercase;
+  }
+  .founder-text p{
+    font-size:1.02rem;
+    line-height:1.75;
+    color:var(--ink-soft);
+    margin:0 0 18px;
+  }
+  .founder-text p strong{ color:var(--ink); }
+  .founder-quote{
+    margin:26px 0;
+    padding:22px 26px;
+    border-left:3px solid var(--red);
+    background:var(--cream);
+    font-family:'Big Shoulders Display';
+    font-weight:700;
+    font-size:1.3rem;
+    color:var(--navy);
+    text-transform:uppercase;
+    line-height:1.2;
+  }
+  .domains{
+    margin-top:30px;
+  }
+  .domains .mono{ color:var(--navy); font-size:0.68rem; font-weight:700; margin-bottom:14px; display:block; }
+  .domains ul{
+    list-style:none;
+    margin:0; padding:0;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px 24px;
+  }
+  .domains li{
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+    font-size:0.92rem;
+    font-weight:600;
+    color:var(--navy);
+  }
+  .domains li::before{
+    content:"";
+    width:7px;height:7px;
+    background:var(--red);
+    flex-shrink:0;
+    transform:translateY(-2px);
+  }
+
+  /* ---------- services ---------- */
+  .services{ background:var(--cream); }
+  .svc-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--line-strong);
+    border:1px solid var(--line-strong);
+  }
+  .svc-card{
+    background:var(--paper);
+    padding:34px 28px;
+    display:flex;
+    flex-direction:column;
+    min-height:270px;
+    transition:background 0.25s ease;
+  }
+  .svc-card:hover{ background:#fbfaf6; }
+  .svc-icon{
+    width:48px;height:48px;
+    border-radius:50%;
+    background:var(--navy);
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:22px;
+    flex-shrink:0;
+  }
+  .svc-card:hover .svc-icon{ background:var(--red); }
+  .svc-icon svg{ width:22px; height:22px; stroke:var(--cream); }
+  .svc-card h3{
+    font-size:1.28rem;
+    color:var(--navy);
+    font-weight:800;
+    margin-bottom:10px;
+  }
+  .svc-card p{
+    font-size:0.9rem;
+    line-height:1.6;
+    color:var(--ink-soft);
+    margin:0;
+  }
+  .svc-tags{
+    margin-top:auto;
+    padding-top:16px;
+    font-family:'Space Mono';
+    font-size:0.65rem;
+    letter-spacing:0.05em;
+    color:var(--gold);
+    text-transform:uppercase;
+  }
+
+  /* ---------- conviction ---------- */
+  .conviction{
+    background:var(--red);
+    color:#fff;
+    padding:80px 0;
+    position:relative;
+    overflow:hidden;
+  }
+  .conviction::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+    background-size:100% 44px;
+    pointer-events:none;
+  }
+  .conv-inner{ position:relative; z-index:1; max-width:820px; }
+  .conviction .eyebrow{ color:rgba(255,255,255,0.85); }
+  .conviction .eyebrow::before{ background:#fff; }
+  .conv-line1{
+    font-size:clamp(1.5rem,3.6vw,2.1rem);
+    font-family:'Big Shoulders Display';
+    font-weight:600;
+    color:rgba(255,255,255,0.75);
+    text-transform:uppercase;
+  }
+  .conv-line2{
+    font-size:clamp(1.9rem,4.4vw,2.9rem);
+    font-family:'Big Shoulders Display';
+    font-weight:900;
+    color:#fff;
+    text-transform:uppercase;
+    margin-top:6px;
+  }
+
+  /* ---------- pour qui ---------- */
+  .pourqui{ background:var(--paper); }
+  .pq-inner{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+  }
+  .pq-list{ list-style:none; margin:0; padding:0; }
+  .pq-list li{
+    display:flex;
+    align-items:flex-start;
+    gap:16px;
+    padding:20px 0;
+    border-top:1px solid var(--line);
+    font-size:1.08rem;
+    font-weight:600;
+    color:var(--navy);
+  }
+  .pq-list li:first-child{ border-top:none; }
+  .pq-check{
+    flex-shrink:0;
+    width:26px;height:26px;
+    border:1.5px solid var(--red);
+    display:flex;align-items:center;justify-content:center;
+    margin-top:2px;
+  }
+  .pq-check svg{ width:14px;height:14px; stroke:var(--red); }
+
+  .target-wrap{ display:flex; justify-content:center; }
+  .target{
+    width:min(300px, 80vw); aspect-ratio:1; border-radius:50%;
+    position:relative;
+    background:
+      radial-gradient(circle, var(--red) 0 12%, transparent 12.5%),
+      repeating-radial-gradient(circle, var(--navy) 0, var(--navy) 14%, var(--cream) 14%, var(--cream) 28%);
+    border:1px solid var(--line-strong);
+  }
+  .target::after{
+    content:"";
+    position:absolute; top:50%; left:50%;
+    width:1px; height:130%;
+    background:var(--line-strong);
+    transform:translate(-50%,-50%) rotate(45deg);
+  }
+  .target::before{
+    content:"";
+    position:absolute; top:50%; left:50%;
+    width:1px; height:130%;
+    background:var(--line-strong);
+    transform:translate(-50%,-50%) rotate(-45deg);
+  }
+
+  /* ---------- contact / footer ---------- */
+  footer{
+    background:var(--navy-3);
+    color:var(--cream);
+    padding:64px 0 28px;
+  }
+  .footer-inner{
+    display:grid;
+    grid-template-columns:1.3fr 1fr 1fr;
+    gap:40px;
+    padding-bottom:40px;
+    border-bottom:1px solid rgba(244,241,232,0.14);
+  }
+  .footer-brand .brand-name{ color:var(--cream); font-size:1.3rem; }
+  .footer-tag{
+    margin-top:14px;
+    font-family:'Space Mono';
+    font-size:0.78rem;
+    letter-spacing:0.06em;
+    color:rgba(244,241,232,0.6);
+    max-width:280px;
+    line-height:1.7;
+  }
+  .footer-col h4{
+    font-family:'Space Mono';
+    font-size:0.72rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--red);
+    margin:0 0 18px;
+  }
+  .footer-col a, .footer-col .item{
+    display:flex; align-items:center; gap:10px;
+    text-decoration:none;
+    color:rgba(244,241,232,0.85);
+    font-size:0.95rem;
+    margin-bottom:14px;
+  }
+  .footer-col a:hover{ color:#fff; }
+  .footer-col svg{ width:16px;height:16px; stroke:var(--red); flex-shrink:0; }
+  .socials{ display:flex; gap:10px; margin-top:6px; }
+  .socials a{
+    width:34px;height:34px;
+    border:1px solid rgba(244,241,232,0.3);
+    display:flex;align-items:center;justify-content:center;
+    margin:0;
+  }
+  .socials a:hover{ border-color:var(--red); background:var(--red); }
+  .socials svg{ width:15px;height:15px; stroke:var(--cream); }
+  .foot-bottom{
+    padding-top:24px;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:10px;
+    font-family:'Space Mono';
+    font-size:0.68rem;
+    letter-spacing:0.06em;
+    color:rgba(244,241,232,0.4);
+    text-transform:uppercase;
+  }
+
+  /* ---------- reveal animation ---------- */
+  .reveal{ opacity:0; transform:translateY(18px); transition:opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+  @media (prefers-reduced-motion: reduce){
+    .reveal{ opacity:1; transform:none; transition:none; }
+    html{ scroll-behavior:auto; }
+  }
+
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--red);
+    outline-offset:3px;
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 900px){
+    nav ul{ display:none; }
+    .hero-inner{ grid-template-columns:1fr; }
+    .hero-emblem{ order:-1; margin-bottom:20px; }
+    .about-inner, .pq-inner{ grid-template-columns:1fr; }
+    .svc-grid{ grid-template-columns:repeat(2,1fr); }
+    .footer-inner{ grid-template-columns:1fr; }
+    .emblem-ring{ width:min(280px,70vw); }
+  }
+  @media (max-width: 560px){
+    .wrap{ padding:0 20px; }
+    .svc-grid{ grid-template-columns:1fr; }
+    .hero{ padding:76px 0 44px; }
+    section{ padding:64px 0; }
+    .et-e, .et-w{ display:none; }
+    .nav-cta{ padding:9px 13px; font-size:0.7rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-inner">
+    <a href="#top" class="brand">
+      <span class="brand-mark">EL</span>
+      <span class="brand-name">ERETZ<span> LEADER</span></span>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="apropos.html">Qui sommes-nous</a></li>
+        <li><a href="fondateur.html">Fondateur</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="formations.html">Formations</a></li>
+        <li><a href="#conviction">Conviction</a></li>
+        <li><a href="#pourqui">Pour qui</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="contact.html" class="nav-cta">Nous contacter</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+    <div class="wrap hero-inner">
+      <div>
+        <div class="hero-badge"><span class="dot"></span> CABINET DE STRUCTURATION STRATÉGIQUE &amp; DE FORMATION</div>
+        <h1>Cabinet<br><span class="accent">Eretz Leader</span></h1>
+        <p class="hero-sub">Bâtir &nbsp;·&nbsp; <b>Structurer</b> &nbsp;·&nbsp; Pérenniser le potentiel</p>
+
+        <div class="thesis">
+          <span class="no">Nous ne motivons pas.</span>
+          <span class="yes">Nous <span>structurons</span> pour durer.</span>
+        </div>
+
+        <div class="hero-ctas">
+          <a href="contact.html" class="btn btn-primary">Prendre contact</a>
+          <a href="services.html" class="btn btn-ghost">Découvrir nos services</a>
+        </div>
+      </div>
+
+      <div class="hero-emblem">
+        <div class="emblem-ring bp on-dark">
+          <span class="emblem-tick et-n">POTENTIEL</span>
+          <span class="emblem-tick et-s">RÉSULTAT</span>
+          <span class="emblem-tick et-e">DURÉE</span>
+          <span class="emblem-tick et-w">SYSTÈME</span>
+          <div class="emblem-core">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#f4f1e8" stroke-width="1.6"><path d="M12 2L4 6v6c0 5 3.4 8.7 8 10 4.6-1.3 8-5 8-10V6l-8-4z"/><path d="M9 12l2 2 4-4"/></svg>
+            <span class="t1">LEADERSHIP<br>PATRIOTIQUE</span>
+            <span class="t2">★ ★ ★ ★</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUI SOMMES-NOUS -->
+  <section class="about">
+    <div class="wrap">
+      <div class="reveal" style="max-width:640px;">
+        <div class="eyebrow">Qui sommes-nous</div>
+        <h2 style="font-size:2.4rem;color:var(--navy);margin-bottom:22px;">Un cabinet, une méthode</h2>
+        <div class="about-text">
+          <p><strong>ERETZ LEADER</strong> est un cabinet de structuration stratégique et de formation. Nous accompagnons les personnes, entreprises, organisations et institutions à transformer leur potentiel en résultats durables et utiles à la Nation.</p>
+        </div>
+        <div class="credo">
+          <span class="l1">Sans structuration, le potentiel s'éparpille.</span>
+          <span class="l2">Avec la structuration, tout devient durable.</span>
+        </div>
+        <div class="hero-ctas" style="margin-top:28px;">
+          <a href="apropos.html" class="btn btn-primary">En savoir plus</a>
+          <a href="fondateur.html" class="btn btn-ghost" style="color:var(--navy);border-color:var(--line-strong);">Découvrir le fondateur</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">Nos services</div>
+        <h2>Sept leviers, une seule exigence : la durée</h2>
+        <p>Chaque service répond à un besoin précis de structuration — pour les personnes, les entreprises et les institutions.</p>
+      </div>
+
+      <div class="svc-grid">
+        <div class="svc-card reveal">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M12 22v-6M4 6l4.5 3M19.5 6L15 9M4 18l4.5-3M19.5 18L15 15"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <h3>Formation en leadership patriotique</h3>
+          <p>Former des leaders compétents, responsables et engagés pour le développement national.</p>
+          <div class="svc-tags">Compétence — Engagement — Nation</div>
+        </div>
+
+        <div class="svc-card reveal">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V9l7-6 7 6v12"/><path d="M9 21v-6h6v6"/></svg></div>
+          <h3>Structuration stratégique</h3>
+          <p>Vision, organisation, systèmes et modèles économiques, gouvernance.</p>
+          <div class="svc-tags">Vision — Organisation — Gouvernance</div>
+        </div>
+
+        <div class="svc-card reveal">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><path d="M2 21v-1a6 6 0 0 1 6-6h2a6 6 0 0 1 6 6v1"/><circle cx="18" cy="8" r="2.2"/><path d="M16.5 14.2c1.3-.3 3.3-.1 4.5 1v1"/></svg></div>
+          <h3>Accompagnement des entreprises &amp; organisations</h3>
+          <p>Productivité, ressources humaines, performance, pérennisation.</p>
+          <div class="svc-tags">RH — Productivité — Performance</div>
+        </div>
+
+        <div class="svc-card reveal">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-7-7 18-3-8-8-3z"/></svg></div>
+          <h3>Communication stratégique &amp; branding</h3>
+          <p>Image institutionnelle, message d'impact, positionnement.</p>
+          <div class="svc-tags">Image — Message — Positionnement</div>
+        </div>
+
+        <div class="svc-card reveal">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M5 7l-3 6a3 3 0 0 0 6 0l-3-6zM19 7l-3 6a3 3 0 0 0 6 0l-3-6zM5 7h14M8 21h8"/></svg></div>
+          <h3>Assistance &amp; orientation juridique</h3>
+          <p>Sécurisation et structuration légale des activités et projets.</p>
+          <div class="svc-tags">Sécurisation — Conformité — Cadre légal</div>
+        </div>
+
+        <div class="svc-card reveal">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div>
+          <h3>Consulting</h3>
+          <p>Études, conseils stratégiques et solutions sur mesure pour des résultats durables.</p>
+          <div class="svc-tags">Étude — Conseil — Solutions</div>
+        </div>
+
+        <div class="svc-card reveal">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l1.6 4.6L18 8l-4.4 1.4L12 14l-1.6-4.6L6 8l4.4-1.4L12 2z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8L19 15z"/></svg></div>
+          <h3>Innovation &amp; transformation</h3>
+          <p>Accompagner l'adoption de nouvelles pratiques et technologies pour moderniser durablement les organisations.</p>
+          <div class="svc-tags">Modernisation — Créativité — Adaptation</div>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:48px;">
+        <a href="services.html" class="btn btn-outline" style="color:var(--navy);border-color:var(--line-strong);">Voir le détail de nos services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONVICTION -->
+  <section class="conviction" id="conviction">
+    <div class="wrap conv-inner reveal">
+      <div class="eyebrow">Notre conviction</div>
+      <span class="conv-line1">Sans structuration, le potentiel s'éparpille.</span>
+      <span class="conv-line2">Avec la structuration, tout devient durable.</span>
+    </div>
+  </section>
+
+  <!-- POUR QUI -->
+  <section class="pourqui" id="pourqui">
+    <div class="wrap pq-inner">
+      <div class="reveal">
+        <div class="eyebrow">Pour qui</div>
+        <h2 style="font-size:2.2rem;color:var(--navy);margin-bottom:30px;">Nous structurons le potentiel de</h2>
+        <ul class="pq-list">
+          <li><span class="pq-check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> Entrepreneurs &amp; porteurs de projets</li>
+          <li><span class="pq-check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> Entreprises &amp; organisations</li>
+          <li><span class="pq-check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> Institutions &amp; collectivités</li>
+          <li><span class="pq-check"><svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> Jeunes leaders &amp; dirigeants</li>
+        </ul>
+      </div>
+      <div class="target-wrap reveal">
+        <div class="target" role="img" aria-label="Cible symbolisant les publics visés par ERETZ LEADER"></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- CONTACT / FOOTER -->
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="#top" class="brand">
+          <span class="brand-mark">EL</span>
+          <span class="brand-name">ERETZ&nbsp;LEADER</span>
+        </a>
+        <p class="footer-tag">Là où le potentiel devient<br>une force structurée.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contacts</h4>
+        <a href="tel:+22605464601"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 3a2 2 0 0 1-.4 2.1L8 10.1a16 16 0 0 0 6 6l1.3-1.4a2 2 0 0 1 2-.4c1 .3 2 .5 3 .7a2 2 0 0 1 1.7 2z"/></svg> +226 05 46 46 01</a>
+        <a href="tel:+22653532826"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 3a2 2 0 0 1-.4 2.1L8 10.1a16 16 0 0 0 6 6l1.3-1.4a2 2 0 0 1 2-.4c1 .3 2 .5 3 .7a2 2 0 0 1 1.7 2z"/></svg> +226 53 53 28 26</a>
+        <div class="socials" style="margin-top:8px;">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/><path d="M10 9v12M10 13a4 4 0 0 1 8 0v8"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M10 9l5 3-5 3z"/></svg></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Cabinet</h4>
+        <a href="apropos.html">Qui sommes-nous</a>
+        <a href="services.html">Nos services</a>
+        <a href="#pourqui">Pour qui</a>
+        <a href="contact.html">Nous contacter</a>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <span>© 2026 Cabinet Eretz Leader — Tous droits réservés</span>
+      <span>Bâtir · Structurer · Pérenniser</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.15});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
