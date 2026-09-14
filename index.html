@@ -113,14 +113,11 @@
     text-decoration:none;
   }
   .brand-mark{
-    width:38px;height:38px;border-radius:50%;
-    border:2px solid var(--navy);
-    display:flex;align-items:center;justify-content:center;
-    background:var(--navy);
-    color:var(--cream);
-    font-family:'Big Shoulders Display';
-    font-weight:800;
-    font-size:1rem;
+    width:40px;height:40px;border-radius:50%;
+    border:1px solid var(--line-strong);
+    object-fit:cover;
+    display:block;
+    flex-shrink:0;
   }
   .brand-name{
     font-family:'Big Shoulders Display';
@@ -166,7 +163,31 @@
     border:1px solid var(--red);
   }
   .nav-cta:hover{ background:var(--red-2); }
-  .nav-toggle{ display:none; }
+
+  /* mobile menu toggle */
+  .nav-toggle{
+    display:none;
+    flex-direction:column;
+    justify-content:center;
+    gap:5px;
+    width:34px;height:34px;
+    background:none;
+    border:none;
+    cursor:pointer;
+    padding:0;
+    flex-shrink:0;
+  }
+  .nav-toggle span{
+    display:block;
+    width:100%;
+    height:2px;
+    background:var(--navy);
+    transition:transform 0.25s ease, opacity 0.25s ease;
+  }
+  .nav-toggle.is-active span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+  .nav-toggle.is-active span:nth-child(2){ opacity:0; }
+  .nav-toggle.is-active span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+  .nav-right{ display:flex; align-items:center; gap:14px; }
 
   /* ---------- hero ---------- */
   .hero{
@@ -708,7 +729,27 @@
 
   /* ---------- responsive ---------- */
   @media (max-width: 900px){
-    nav ul{ display:none; }
+    .nav-toggle{ display:flex; }
+    nav{
+      position:absolute;
+      top:100%; left:0; right:0;
+      background:var(--cream);
+      border-bottom:1px solid var(--line-strong);
+      max-height:0;
+      overflow:hidden;
+      transition:max-height 0.3s ease;
+      z-index:40;
+    }
+    nav.open{ max-height:70vh; overflow-y:auto; }
+    nav ul{
+      display:flex;
+      flex-direction:column;
+      gap:0;
+      padding:6px 32px 22px;
+    }
+    nav ul li{ width:100%; }
+    nav a{ display:block; padding:14px 0; border-bottom:1px solid var(--line); font-size:0.9rem; }
+    nav a::after{ display:none; }
     .hero-inner{ grid-template-columns:1fr; }
     .hero-emblem{ order:-1; margin-bottom:20px; }
     .about-inner, .pq-inner{ grid-template-columns:1fr; }
@@ -731,10 +772,10 @@
 <header>
   <div class="nav-inner">
     <a href="#top" class="brand">
-      <span class="brand-mark">EL</span>
+      <img src="images/logo.png" alt="Logo Eretz Leader" class="brand-mark">
       <span class="brand-name">ERETZ<span> LEADER</span></span>
     </a>
-    <nav>
+    <nav id="siteNav">
       <ul>
         <li><a href="apropos.html">Qui sommes-nous</a></li>
         <li><a href="fondateur.html">Fondateur</a></li>
@@ -745,7 +786,12 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
-    <a href="contact.html" class="nav-cta">Nous contacter</a>
+    <div class="nav-right">
+      <a href="contact.html" class="nav-cta">Nous contacter</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </header>
 
@@ -910,7 +956,7 @@
     <div class="footer-inner">
       <div class="footer-brand">
         <a href="#top" class="brand">
-          <span class="brand-mark">EL</span>
+          <img src="images/logo.png" alt="Logo Eretz Leader" class="brand-mark">
           <span class="brand-name">ERETZ&nbsp;LEADER</span>
         </a>
         <p class="footer-tag">Là où le potentiel devient<br>une force structurée.</p>
@@ -918,12 +964,13 @@
 
       <div class="footer-col">
         <h4>Contacts</h4>
-        <a href="tel:+22677177708"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 3a2 2 0 0 1-.4 2.1L8 10.1a16 16 0 0 0 6 6l1.3-1.4a2 2 0 0 1 2-.4c1 .3 2 .5 3 .7a2 2 0 0 1 1.7 2z"/></svg> +226 77 17 77 08</a>
-        <a href="tel : +22677177708"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 3a2 2 0 0 1-.4 2.1L8 10.1a16 16 0 0 0 6 6l1.3-1.4a2 2 0 0 1 2-.4c1 .3 2 .5 3 .7a2 2 0 0 1 1.7 2z"/></svg>+226 77 17 77 08 </a>
+        <a href="tel:+22605464601"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 3a2 2 0 0 1-.4 2.1L8 10.1a16 16 0 0 0 6 6l1.3-1.4a2 2 0 0 1 2-.4c1 .3 2 .5 3 .7a2 2 0 0 1 1.7 2z"/></svg> +226 05 46 46 01</a>
+        <a href="tel:+22653532826"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 3a2 2 0 0 1-.4 2.1L8 10.1a16 16 0 0 0 6 6l1.3-1.4a2 2 0 0 1 2-.4c1 .3 2 .5 3 .7a2 2 0 0 1 1.7 2z"/></svg> +226 53 53 28 26</a>
         <div class="socials" style="margin-top:8px;">
-          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/><path d="M10 9v12M10 13a4 4 0 0 1 8 0v8"/></svg></a>
-          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M10 9l5 3-5 3z"/></svg></a>
+         <a href="https://facebook.com/eretzleader?mibextid=ZbWKwL" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://tiktok.com/@eretzleader" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v10.5a3.5 3.5 0 1 1-3-3.46"/><path d="M14 3a4.5 4.5 0 0 0 4.5 4.5"/></svg></a>
+          <a href="https://www.linkedin.com/in/cabinet-eretz-leader-80bba5345" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/><path d="M10 9v12M10 13a4 4 0 0 1 8 0v8"/></svg></a>
+          <a href="https://www.youtube.com/@eretzleadertv" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M10 9l5 3-5 3z"/></svg></a>  
         </div>
       </div>
 
@@ -933,6 +980,7 @@
         <a href="services.html">Nos services</a>
         <a href="#pourqui">Pour qui</a>
         <a href="contact.html">Nous contacter</a>
+        <a href="fondateur.html">Fondateur</a>
       </div>
     </div>
 
@@ -950,6 +998,23 @@
     });
   }, {threshold:0.15});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  const navToggle = document.getElementById('navToggle');
+  const siteNav = document.getElementById('siteNav');
+  if(navToggle && siteNav){
+    navToggle.addEventListener('click', ()=>{
+      const isOpen = siteNav.classList.toggle('open');
+      navToggle.classList.toggle('is-active', isOpen);
+      navToggle.setAttribute('aria-expanded', isOpen);
+    });
+    siteNav.querySelectorAll('a').forEach(link=>{
+      link.addEventListener('click', ()=>{
+        siteNav.classList.remove('open');
+        navToggle.classList.remove('is-active');
+        navToggle.setAttribute('aria-expanded','false');
+      });
+    });
+  }
 </script>
 
 </body>
